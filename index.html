@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Kwitter</title>
+    <!--Bootstrap Links-->
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css'>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js'></script>
+
+    <!--Firebase Links-->
+    <script src='https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js'></script>
+    <script src='https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js'></script>
+    <script src='https://www.gstatic.com/firebasejs/live/3.1/firebase.js'></script>
+
+    <!--Other-->
+    <script src='database.main.js'></script>
+    <link rel='stylesheet' href='style.css'>
+</head>
+
+<body>
+    <div class='container'>
+        <div class='login-screen screen col-lg-12 col-md-12 col-sm-12 col-xs-12'>
+            <h1>Kwitter | login</h1>
+            <input id='username' placeholder='User Name' type='text' class='form-control input'>
+            <button class='btn btn-info' type='submit' onclick='add_User()' accesskey='g'>Send</button>
+        </div>
+
+        <div class='select-room-screen screen col-lg-12 col-md-12 col-sm-12 col-xs-12'>
+            <button class='btn btn-danger logout-btn' type='reset' onclick='logout()'>Logout <span
+                    class='glyphicon glyphicon-log-out'></span></button>
+            <h2 id='greeting'>Welcome!!!!!!!!!!</h2>
+            <input type='text' id='room_name' placeholder='Add Room' class='form-control input'
+                style='margin: 10px 0px;'>
+            <button onclick='add_room()' type='submit' class='btn btn-success button'>Add</button>
+            <h1>Trending Rooms</h1>
+            <ul class='trending-rooms-list ul'></ul>
+        </div>
+
+        <div class='screen kwitter_screen'>
+            <button class='btn btn-danger logout-btn' type='reset' onclick='logout()'>Logout <span
+                    class='glyphicon glyphicon-log-out'></span></button>
+
+            <h1>Kwitter</h1>
+            <ul id='messages-list' class="ul"></ul>
+            <div class="message-div">
+                <input id="msg" placeholder="Enter Message" type="text" class="form-control">
+                <button class="btn btn-success form-control msg-btn" type="submit" onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
